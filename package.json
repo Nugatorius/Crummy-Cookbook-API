@@ -2,8 +2,9 @@
   "name": "crummy-cookbook-api",
   "version": "1.0.0",
   "description": "API for the Crummy Cookbook application",
-  "main": "src/index.js",
+  "main": "app/index.js",
   "scripts": {
+    "start": "nodemon app/.",
     "test": "npm test"
   },
   "repository": {
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/Nugatorius/Crummy-Cookbook-API#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "sequelize": "^4.37.5",
@@ -30,6 +32,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^5.0.5"
+    "mocha": "^5.0.5",
+    "nodemon": "^1.17.3"
   }
 }
