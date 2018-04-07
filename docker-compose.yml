@@ -1,0 +1,19 @@
+version: "2"
+services:
+  appr: 
+    build: .
+    ports: 
+      - 3000:3000
+    command: >
+      bash -c "./wait_for_it.sh postgres:5432 -- npm run migrate-down && npm run migrate-up && npm run seed && npm start"
+    depends_on:
+      - postgres
+    environment:
+      - PORT: 3000
+      - NODE_ENV: docker
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=crummy_cookbook
