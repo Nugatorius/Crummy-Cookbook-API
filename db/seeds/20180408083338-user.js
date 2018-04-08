@@ -1,22 +1,22 @@
 'use strict';
 
 module.exports = {
-  up : (queryInterface) => {
+  up: (queryInterface) => {
     return queryInterface.bulkInsert('Users', [{
-      firstName : 'John',
-      lastName : 'Doe',
-      username : 'TheNewJD',
+      firstName: 'John',
+      lastName: 'Doe',
+      username: 'TheNewJD',
       email: 'jd@email.com',
       phone: '999999999',
       address: 'Some random address',
-      createdAt : new Date(),
-      updatedAt : new Date()
+      createdAt: new Date(),
+      updatedAt: new Date()
     }], {});
   },
 
-  down : (queryInterface) => {
+  down: (queryInterface) => {
     queryInterface.bulkDelete('Users', [{
-      firstName :'John'
+      firstName: 'John'
     }]);
   }
 };
