@@ -9,7 +9,7 @@ describe('Main server file', () => {
   });
   it('responds to /', (done) => {
     request(server)
-      .get('/')
+      .get('/api/v1')
       .expect(200, done);
   });
 });

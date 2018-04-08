@@ -15,5 +15,5 @@ services:
     image: postgres
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_PASSWORD=pass
       - POSTGRES_DB=crummy_cookbook
