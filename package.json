@@ -6,8 +6,8 @@
   "scripts": {
     "start:local": "nodemon ./app/.",
     "start": "pm2-runtime ./app/.",
-    "test:unit": "NODE_ENV=test ./node_modules/mocha/bin/mocha __tests__/unit/",
-    "test:integration": "NODE_ENV=test ./node_modules/mocha/bin/mocha __tests__/integration/",
+    "test:unit": "NODE_ENV=test ./node_modules/mocha/bin/mocha --recursive __tests__/unit/",
+    "test:integration": "NODE_ENV=test ./node_modules/mocha/bin/mocha --recursive __tests__/integration/",
     "test": "NODE_ENV=test npm run test:unit",
     "lint": "./node_modules/eslint/bin/eslint.js ./app",
     "lint:fix": "./node_modules/eslint/bin/eslint.js --fix ./app",
