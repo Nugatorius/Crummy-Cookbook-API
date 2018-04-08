@@ -1,15 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const logger = require('winston');
 
-router.get('/', (request, response) => {
-  logger.info('Home Page');
-  response.send('Home page');
-});
+const userRoutes = require('./user');
 
-router.get('/about', (request, response) => {
-  logger.info('About Page');
-  response.send('Learn about us');
-});
+router.use('/users', userRoutes);
 
 module.exports = router;
