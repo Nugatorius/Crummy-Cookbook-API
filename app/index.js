@@ -1,15 +1,15 @@
-const logger = require('winston');
-require('./utils/logger');
-
 const express = require('express');
 const bodyParser = require('body-parser');
+const logger = require('winston');
+
+require('./utils/logger');
+process.env.NODE_ENV === 'test' ? require('dotenv').config({ path: '.test.env' }):require('dotenv').config();
 
 const routes = require('./routes');
 
 const app = express();
 
 app.use(routes);
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
