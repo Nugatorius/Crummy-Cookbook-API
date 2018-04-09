@@ -27,7 +27,7 @@ module.exports = {
     'username': 'postgres',
     'password': 'pass',
     'database': 'crummy_cookbook',
-    'host': '127.0.0.1',
+    'host': 'postgres',
     'port': 5432,
     'dialect': 'postgres',
     'operatorsAliases': false,

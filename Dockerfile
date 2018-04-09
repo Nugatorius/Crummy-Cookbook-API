@@ -7,9 +7,10 @@ WORKDIR /srv
 COPY package.json ./
 
 RUN npm install
+RUN npm i -g pm2
 
 COPY . .
 
-RUN ["chmod", "+x", "/srv/app/wait_for_it.sh"]
+RUN ["chmod", "+x", "/srv/wait_for_it.sh"]
 
 EXPOSE 3000
