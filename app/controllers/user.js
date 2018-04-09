@@ -76,9 +76,15 @@ module.exports = {
   },
   destroy: async (request, response) => {
     try {
-      await models.User.destroy({ where: { id: request.params.id } });
-      const result = jsonHelper({ status: true }, null, 200);
-      response.status(200).json(result);
+      const user = await models.User.destroy({ where: { id: request.params.id } });
+      if (user) {
+        const result = jsonHelper({ status: true }, null, 200);
+        response.status(200).json(result);
+      }
+      else {
+        const result = jsonHelper({ status: true }, null, 404);
+        response.status(404).json(result);
+      }
     }
     catch (error) {
       const result = jsonHelper(null, error.message, 500);
