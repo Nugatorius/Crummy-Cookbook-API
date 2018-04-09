@@ -28,7 +28,6 @@ const deleteUserSchema = {
 user.use(bodyParser.urlencoded({ extended: false }));
 user.use(bodyParser.json());
 
-
 user.post('/', expressJoi.joiValidate(postUserSchema), controllers.user.create);
 user.get('/', controllers.user.get);
 user.get('/:id', expressJoi.joiValidate(getUserSchema), controllers.user.index);
