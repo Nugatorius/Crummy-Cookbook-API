@@ -1,6 +1,6 @@
 const mailer = require('nodemailer');
 const passwordGenerator = require('generate-password');
-require('./utils/logger');
+require('../utils/logger');
 process.env.NODE_ENV === 'test' ? require('dotenv').config({ path: '.test.env' }) : require('dotenv').config();
 
 const sendPassword = async (to, from = process.env.USER_EMAIL, subject) => {
@@ -30,4 +30,4 @@ const sendPassword = async (to, from = process.env.USER_EMAIL, subject) => {
   }
 };
 
-export default { sendPassword };
+module.exports = { sendPassword };

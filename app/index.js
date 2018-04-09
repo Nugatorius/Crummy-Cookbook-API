@@ -1,7 +1,7 @@
 const express = require('express');
 const logger = require('winston');
-
 require('./utils/logger');
+
 process.env.NODE_ENV === 'test' ? require('dotenv').config({ path: '.test.env' }) : require('dotenv').config();
 
 const routes = require('./routes');
