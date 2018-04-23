@@ -1,6 +1,6 @@
 version: "2"
 services:
-  appr: 
+  app: 
     build: .
     ports: 
       - 3000:3000
@@ -9,8 +9,9 @@ services:
     depends_on:
       - postgres
     environment:
-      - PORT: 3000
-      - NODE_ENV: docker
+      PORT: 3000
+      NODE_ENV: docker
+      SECRET_KEY: secret
   postgres:
     image: postgres
     environment:
